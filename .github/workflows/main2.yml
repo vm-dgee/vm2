@@ -11,8 +11,11 @@ jobs:
       URL: ${{ secrets.URL }}
 
     steps:
-      - name: Mostrar URL
+      - name: Mostrar variável
         run: echo "$URL"
 
       - name: Fazer request
-        run: curl "$URL"
+        run: curl -L "$URL"
+
+      - name: Ver status HTTP
+        run: curl -I "$URL"
